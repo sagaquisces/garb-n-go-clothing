@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Form } from 'react-router-dom'
 
 import FormInput from '../../form-input/form-input.component'
 import Button from '../button/button.component'
@@ -35,7 +34,7 @@ const SignUpForm = () => {
     // see if we've authed user
     try {
       const { user } = await createAuthUserWithEmailAndPassword(email, password)
-      await createUserDocumentFromAuth(user, { displayName })
+      // await createUserDocumentFromAuth(user, { displayName })
       resetFormFields()
 
     } catch (error) {

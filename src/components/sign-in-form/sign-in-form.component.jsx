@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { Form } from 'react-router-dom'
-
 import FormInput from '../../form-input/form-input.component'
 import Button from '../button/button.component'
 
@@ -17,20 +15,22 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password} = formFields
 
+  // const { setCurrentUser } = useContext(UserContext)
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
   }
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup()
+    await signInWithGooglePopup()
   }
  
   const handleSubmit = async (event) => {
     event.preventDefault()
 
     try {
-      const res = await signInAuthUserWithEmailAndPassword(email, password)
-      console.log(res)
+      const { user } = await signInAuthUserWithEmailAndPassword(email, password)
+      // setCurrentUser(user)
       resetFormFields()
 
     } catch (error) {
