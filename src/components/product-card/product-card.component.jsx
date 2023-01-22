@@ -9,7 +9,7 @@ const ProductCard = ({product}) => {
   const { name, price, imageUrl } = product
   const { updateCartItems } = useContext(CartContext)
 
-  const addProductToCart = () => updateCartItems(product)
+  const addProductToCart = () => updateCartItems(product, 'increment')
 
   return (
     <div className='product-card-container'>
