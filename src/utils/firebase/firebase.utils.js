@@ -20,7 +20,6 @@ import {
   query,
   getDocs
 } from 'firebase/firestore'
-import { useRef } from 'react';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBrIG685HhxHRWdMhc1wU-Oe4rV68YJ9dI",
@@ -31,7 +30,7 @@ const firebaseConfig = {
   appId: "1:671900143488:web:280fd996f5a455d838fb65"
 };
 
-const firebaseApp = initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 
 const googleProvider = new GoogleAuthProvider()
 
