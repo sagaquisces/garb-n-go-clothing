@@ -14,7 +14,8 @@ import {
   NavigationContainer,
   LogoContainer,
   NavLinks,
-  NavLink
+  NavLinkSpan,
+  NavLinkDiv
 } from './navigation.styles'
 
 const Navigation = () => {
@@ -28,16 +29,16 @@ const Navigation = () => {
           <GngLogo className='logo' />
         </LogoContainer>
         <NavLinks>
-          <NavLink to='/shop'>
+          <NavLinkDiv to='/shop'>
             SHOP
-          </NavLink>
+          </NavLinkDiv>
           {
             currentUser ? (
-              <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
+              <NavLinkSpan className="nav-link" onClick={signOutUser}>SIGN OUT</NavLinkSpan>
             ) : (
-              <NavLink to='/auth'>
+              <NavLinkDiv to='/auth'>
                 SIGN IN
-              </NavLink>
+              </NavLinkDiv>
             )
           }
           <CartIcon />
